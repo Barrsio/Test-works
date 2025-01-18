@@ -127,29 +127,29 @@ describe("example to-do app", () => {
       
       found = false;
       a = 0;
-      let targetValue3 = 3; // Теперь можно переназначить
+      let targetValue3 = 3;
       cy.get('[class="js-table-body"]')
         .find('[class="filtration-by-level"]')
         .then(prices => {
           const totalPrices = prices.length;
       
-          let found = false; // Локальный флаг
+          let found = false;
           for (let a = 0; a < totalPrices; a++) {
             cy.wrap(prices.eq(a))
               .invoke('text')
               .then(text => {
-                // Удаляем пробелы и невидимые символы
+               
                 const cleanText = text.replace(/\s|&nbsp;/g, '').trim();
-                const highTear = parseFloat(cleanText); // Преобразуем в число
+                const highTear = parseFloat(cleanText);
       
                 if (highTear === targetValue3) {
-                  // Проверяем очищенный текст
+                  
                   expect(cleanText).to.equal('3');
                   found = true;
                 }
               });
       
-            if (found) break; // Прерываем, если значение найдено
+            if (found) break;
           }
         });
         cy.get('[class="barter-cards-wrap | js-traders false"]')
@@ -162,29 +162,29 @@ describe("example to-do app", () => {
       
       found = false;
       a = 0;
-      let targetValue2 = 2; // Теперь можно переназначить
+      let targetValue2 = 2;
       cy.get('[class="js-table-body"]')
         .find('[class="filtration-by-level"]')
         .then(prices => {
           const totalPrices = prices.length;
       
-          let found = false; // Локальный флаг
+          let found = false;
           for (let a = 0; a < totalPrices; a++) {
             cy.wrap(prices.eq(a))
               .invoke('text')
               .then(text => {
-                // Удаляем пробелы и невидимые символы
+                
                 const cleanText = text.replace(/\s|&nbsp;/g, '').trim();
-                const highTear = parseFloat(cleanText); // Преобразуем в число
+                const highTear = parseFloat(cleanText);
       
                 if (highTear === targetValue2) {
-                  // Проверяем очищенный текст
+                  
                   expect(cleanText).to.equal('2');
                   found = true;
                 }
               });
       
-            if (found) break; // Прерываем, если значение найдено
+            if (found) break; 
           }
         });
         cy.get('[class="barter-cards-wrap | js-traders false"]')
@@ -197,29 +197,29 @@ describe("example to-do app", () => {
       
       found = false;
       a = 0;
-      let targetValue1 = 1; // Теперь можно переназначить
+      let targetValue1 = 1;
       cy.get('[class="js-table-body"]')
         .find('[class="filtration-by-level"]')
         .then(prices => {
           const totalPrices = prices.length;
       
-          let found = false; // Локальный флаг
+          let found = false;
           for (let a = 0; a < totalPrices; a++) {
             cy.wrap(prices.eq(a))
               .invoke('text')
               .then(text => {
-                // Удаляем пробелы и невидимые символы
+               
                 const cleanText = text.replace(/\s|&nbsp;/g, '').trim();
-                const highTear = parseFloat(cleanText); // Преобразуем в число
+                const highTear = parseFloat(cleanText);
       
                 if (highTear === targetValue1) {
-                  // Проверяем очищенный текст
+                 
                   expect(cleanText).to.equal('1');
                   found = true;
                 }
               });
       
-            if (found) break; // Прерываем, если значение найдено
+            if (found) break;
           }
         });
   });
