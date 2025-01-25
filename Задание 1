@@ -79,3 +79,6 @@
 5) Нажать на кнопку 'Finish'.
 Ожидаемый результат:
 Пользователя перенесёт на страницу 'Checkout: Complete!', где будет текст 'Thank you for your order! Your order has been dispatched, and will arrive just as fast as the pony can get there!' и кнопка 'Back Home'.
+
+Результат тестирования сайта 'https://www.saucedemo.com':
+На сайте работают необходимые функции для входа пользователя в аккаунт, сортировки товаров и заказа товаров пользователем.
