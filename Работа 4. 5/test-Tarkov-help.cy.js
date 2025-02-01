@@ -90,30 +90,30 @@ describe("example to-do app", () => {
       .click({ force: true });
       let found = false;
       let a = 0;
-      let targetValue4 = 4; // Изменили на let
+      let targetValue4 = 4;
       
       cy.get('[class="js-table-body"]')
         .find('[class="filtration-by-level"]')
         .then(prices => {
           const totalPrices = prices.length;
       
-          let found = false; // Локальный флаг
+          let found = false;
           for (let a = 0; a < totalPrices; a++) {
             cy.wrap(prices.eq(a))
               .invoke('text')
               .then(text => {
-                // Удаляем пробелы и невидимые символы
+                
                 const cleanText = text.replace(/\s|&nbsp;/g, '').trim();
-                const highTear = parseFloat(cleanText); // Преобразуем в число
+                const highTear = parseFloat(cleanText);
       
                 if (highTear === targetValue4) {
-                  // Проверяем очищенный текст
+                  
                   expect(cleanText).to.equal('4');
                   found = true;
                 }
               });
       
-            if (found) break; // Прерываем, если значение найдено
+            if (found) break;
           }
         });
       
