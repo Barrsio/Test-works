@@ -238,4 +238,18 @@ describe("example to-do app", () => {
     cy.get('[data-lvl="1"]').click({ force: true});
     cy.get('[class="crafts-item filtration-item"]').eq(0).find('[class="hideout-area__level"]').should('have.text', '1 уровень')
     });
+
+  it("Проверка что на странице цена предмета за 1 слот правильно считаеться цена", () =>{
+    cy.get('[class="columns_prod"]').find('a').eq(3).click({ force: true });
+    const abc = 'кабель'
+    cy.get('[class="quest-items__header"]').find('[class="autoCompleteHeader"]').type(`${abc}`);
+    cy.wait(10000);
+    cy.get('[class="quest-items__items-list"]')
+      .find('[class="quest-items__items-list__item"]')
+      .eq(0)
+      .find('[class="item-wrapper item-name-wrapper item_module"]')
+      .find('[class="item-name-count-wrapper"]')
+      .find('[rel="noopener noreferrer"]')
+      .should('include', abc);
+  })
 });
