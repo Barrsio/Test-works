@@ -5,7 +5,7 @@ describe("example to-do app", () => {
   });
   it("Проверка отметки предметов для выполнения заданий", () => {
     cy.get('[class="quests links_elem  "]').click({ force: true });
-    cy.get('[id="quests"] a').first().click({ force: true });
+    cy.get('[id="quests"] a').eq(1).click({ force: true });
     cy.wait(2000);
     cy.get(".article__image").first().click({ force: true });
     cy.wait(2000);
@@ -239,17 +239,17 @@ describe("example to-do app", () => {
     cy.get('[class="crafts-item filtration-item"]').eq(0).find('[class="hideout-area__level"]').should('have.text', '1 уровень')
     });
 
-  it("Проверка что на странице цена предмета за 1 слот правильно считаеться цена", () =>{
+  it("Проверка что на странице цена предмета за 1 слот правильно считается", () => {
     cy.get('[class="columns_prod"]').find('a').eq(3).click({ force: true });
-    const abc = 'кабель'
+    const abc = 'кабель';
     cy.get('[class="quest-items__header"]').find('[class="autoCompleteHeader"]').type(`${abc}`);
-    cy.wait(10000);
+    cy.wait(5000);
     cy.get('[class="quest-items__items-list"]')
       .find('[class="quest-items__items-list__item"]')
       .eq(0)
       .find('[class="item-wrapper item-name-wrapper item_module"]')
       .find('[class="item-name-count-wrapper"]')
-      .find('[rel="noopener noreferrer"]')
-      .should('include', abc);
-  })
+      .find('span')
+      .should('contain', abc);
+  });
 });
