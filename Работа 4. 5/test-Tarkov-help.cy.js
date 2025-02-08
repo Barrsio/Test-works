@@ -239,7 +239,7 @@ describe("example to-do app", () => {
     cy.get('[class="crafts-item filtration-item"]').eq(0).find('[class="hideout-area__level"]').should('have.text', '1 уровень')
     });
 
-  it("Проверка что на странице цена предмета за 1 слот правильно считается", () => {
+  it("Проверка работоспособности поиска на странице важных предметов", () => {
     cy.get('[class="columns_prod"]').find('a').eq(3).click({ force: true });
     const abc = 'кабель';
     cy.get('[class="quest-items__header"]').find('[class="autoCompleteHeader"]').type(`${abc}`);
